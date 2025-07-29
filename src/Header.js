@@ -141,7 +141,7 @@ function Header() {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark" style={{ background: 'linear-gradient(90deg, #343a40, #212529)' }}>
         <div className="container-fluid">
-          <Link className="navbar-brand fw-bold" to="/">VivS Infotech</Link>
+          <Link className="navbar-brand fw-bold" to="/">MRA Infotech</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span className="navbar-toggler-icon"></span>
           </button>

@@ -13,7 +13,7 @@ function Home() {
       <div className="container">
         <div className="text-center mb-5">
           <h1 className="display-4 fw-bold text-dark">
-            <span role="img" aria-label="wave">👋</span> Welcome to <span className="text-primary">VivS Infotech</span>
+            <span role="img" aria-label="wave">👋</span> Welcome to <span className="text-primary">MRA Infotech</span>
           </h1>
           <p className="fs-5 text-secondary">
             Your career starts here — discover jobs or hire talent easily.
@@ -46,7 +46,7 @@ function Home() {
 
         {/* Features */}
         <div className="mt-5 text-center">
-          <h3 className="fw-bold text-dark mb-4">Why Choose VivS?</h3>
+          <h3 className="fw-bold text-dark mb-4">Why Choose MRA?</h3>
           <div className="row g-4">
             <div className="col-md-4">
               <div className="glass-card p-4 h-100">
