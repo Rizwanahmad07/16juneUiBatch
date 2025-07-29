@@ -65,6 +65,7 @@ function Header() {
         localStorage.setItem("token", token);
         localStorage.setItem("user", user.fullName);
         localStorage.setItem("role", role.name);
+        localStorage.setItem("employeeId",user.id);
 
         setUserName(user.fullName);
         setIsLoggedIn(true);

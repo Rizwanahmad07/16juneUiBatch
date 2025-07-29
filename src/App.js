@@ -23,7 +23,9 @@ import Contactus from './Contactus';
 import Roles from './Superadmin/Roles';
 import Users from './Superadmin/Users';
 import Userroles from './Superadmin/Userroles';
+import Customer from './Superadmin/Customer';
 import { useEffect, useState } from 'react';
+import CompanyCompanyaccount from './Company/Companyaccount';
 
 function Sidebar() {
   const location = useLocation();
@@ -113,6 +115,11 @@ function Sidebar() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link to="/company/companyaccount" className={`nav-link d-flex align-items-center ${location.pathname === "/company/companyaccount" ? "active" : "text-light"}`}>
+                  <i className="bi bi-person-circle me-2 text-primary"></i> Company Account
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link to="/company/profilematch" className={`nav-link d-flex align-items-center ${location.pathname === "/company/profilematch" ? "active" : "text-light"}`}>
                   <i className="bi bi-person-check-fill me-2 text-info"></i> Profile Match
                 </Link>
@@ -168,6 +175,11 @@ function Sidebar() {
                   <i className="bi bi-person-vcard me-2 text-warning"></i> User Roles
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/superadmin/customer" className={`nav-link d-flex align-items-center ${location.pathname === "/superadmin/customer" ? "active" : "text-light"}`}>
+                  <i className="bi bi-person-vcard me-2 text-warning"></i> Customer
+                </Link>
+              </li>
             </ul>
           </>
         )}
@@ -198,6 +210,7 @@ function App() {
               <Route path="/employee/logout" element={<EmployeeLogout />} />
               <Route path="/company/postnewjob" element={<CompanyPostnewjob />} />
               <Route path="/company/myaccount" element={<CompanyMyaccount />} />
+              <Route path="/company/companyaccount" element={<CompanyCompanyaccount />} />
               <Route path="/company/profilematch" element={<CompanyProfilematch />} />
               <Route path="/company/appliedjob" element={<CompanyAppliedjob />} />
               <Route path="/admin/employeereport" element={<AdminEmployeereport />} />
@@ -210,6 +223,8 @@ function App() {
               <Route path="/superadmin/roles" element={<Roles />} />
               <Route path="/superadmin/users" element={<Users />} />
               <Route path="/superadmin/userroles" element={<Userroles />} />
+              <Route path="/superadmin/customer" element={<Customer />} />
+              
             </Routes>
           </div>
         </div>

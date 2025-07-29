@@ -1,4 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Swal from "sweetalert2";
+import axios from "axios";
+
+const API_BASE = process.env.REACT_APP_API_BASE_URL;
 
 function Changepassword() {
   const [oldPassword, setOldPassword] = useState("");
@@ -9,26 +13,44 @@ function Changepassword() {
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const handlePasswordUpdate = (e) => {
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    const storedEmail = localStorage.getItem("email"); // or whatever key you store email under
+    if (storedEmail) setEmail(storedEmail);
+  }, []);
+
+  const handlePasswordUpdate = async (e) => {
     e.preventDefault();
 
     if (!oldPassword || !newPassword || !confirmPassword) {
-      alert("All fields are required.");
+      Swal.fire("All fields are required!", "", "warning");
       return;
     }
 
     if (newPassword !== confirmPassword) {
-      alert("New password and confirmation do not match.");
+      Swal.fire("Passwords do not match!", "", "error");
       return;
     }
 
-    // Simulate API call
-    alert("Password updated successfully!");
+    try {
+      const response = await axios.put(`${API_BASE}/api/UpdatePasswords/Change`, {
+        email,
+        oldPassword,
+        newPassword
+      });
 
-    // Reset fields
-    setOldPassword("");
-    setNewPassword("");
-    setConfirmPassword("");
+      if (response.data.success) {
+        Swal.fire("Password Updated!", response.data.message, "success");
+        setOldPassword("");
+        setNewPassword("");
+        setConfirmPassword("");
+      } else {
+        Swal.fire("Error", response.data.message || "Failed to update password", "error");
+      }
+    } catch (error) {
+      Swal.fire("Incorrect Password", "Please check your old password!", "error");
+    }
   };
 
   return (
