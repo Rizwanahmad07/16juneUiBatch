@@ -26,6 +26,8 @@ import Userroles from './Superadmin/Userroles';
 import Customer from './Superadmin/Customer';
 import { useEffect, useState } from 'react';
 import CompanyCompanyaccount from './Company/Companyaccount';
+import FacebookCallback from './FacebookCallback';
+import GoogleCallback from './GoogleCallback';
 
 function Sidebar() {
   const location = useLocation();
@@ -224,7 +226,8 @@ function App() {
               <Route path="/superadmin/users" element={<Users />} />
               <Route path="/superadmin/userroles" element={<Userroles />} />
               <Route path="/superadmin/customer" element={<Customer />} />
-              
+              <Route path="/facebookcallback" element={<FacebookCallback />} />
+              <Route path="/googlecallback" element={<GoogleCallback />} />
             </Routes>
           </div>
         </div>

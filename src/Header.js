@@ -196,8 +196,8 @@ function Header() {
                   </div>
                   <button type="submit" className="btn btn-primary w-100 mb-3">Login</button>
                   <div className="d-flex justify-content-center gap-2">
-                    <button className="btn btn-outline-danger btn-sm"><FaGoogle /></button>
-                    <button className="btn btn-outline-primary btn-sm"><FaFacebookF /></button>
+                    <button type="button" className="btn btn-outline-danger btn-sm" onClick={() => { window.location.href = "http://localhost:5269/api/GAuth/login-google";}}><FaGoogle /></button>
+                    <button type="button" className="btn btn-outline-primary btn-sm" onClick={() => { window.location.href = "http://localhost:5269/api/Auth/login-facebook"; }}><FaFacebookF /></button>
                     <button className="btn btn-outline-info btn-sm"><FaTwitter /></button>
                   </div>
                   <p className="text-center mt-3 mb-0">
